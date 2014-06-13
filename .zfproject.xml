@@ -49,6 +49,7 @@
               <dbTableFile dbTableName="Departemen"/>
               <dbTableFile dbTableName="Jabatan"/>
             </dbTableDirectory>
+            <modelFile modelName="Jabatan"/>
           </modelsDirectory>
           <viewsDirectory>
             <viewScriptsDirectory>
