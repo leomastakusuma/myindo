@@ -1,6 +1,6 @@
 <?php
 
-class TestController extends Zend_Controller_Action
+class TestingController extends Zend_Controller_Action
 {
 
     public function init()
@@ -10,8 +10,7 @@ class TestController extends Zend_Controller_Action
 
     public function indexAction()
     {
-       $this->view->nama='Aldhonie homo';
-       $this->view->umur='23';
+        $this->view->test='test';
     }
 
 
