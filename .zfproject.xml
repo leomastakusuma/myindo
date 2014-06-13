@@ -36,6 +36,9 @@
             <controllerFile controllerName="Hcgs">
               <actionMethod actionName="index"/>
             </controllerFile>
+            <controllerFile controllerName="Jabatan">
+              <actionMethod actionName="index"/>
+            </controllerFile>
           </controllersDirectory>
           <formsDirectory enabled="false"/>
           <layoutsDirectory enabled="false">
@@ -44,11 +47,15 @@
           <modelsDirectory>
             <dbTableDirectory>
               <dbTableFile dbTableName="Departemen"/>
+              <dbTableFile dbTableName="Jabatan"/>
             </dbTableDirectory>
           </modelsDirectory>
           <viewsDirectory>
             <viewScriptsDirectory>
               <viewControllerScriptsDirectory forControllerName="Hcgs">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Jabatan">
                 <viewScriptFile forActionName="index"/>
               </viewControllerScriptsDirectory>
             </viewScriptsDirectory>
