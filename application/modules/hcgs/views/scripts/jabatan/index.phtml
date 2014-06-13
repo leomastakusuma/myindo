@@ -1,8 +1,10 @@
 <br /><br />
 <div id="view-content">
-  <?php 
-  echo '<pre>';
-  print_r($this->nama)
-  ?>
-
+  <?php $a=$this->nama;
+ foreach ($a as $row):
+     echo'<pre>';
+     print_r($row);
+ endforeach;
+  
+  ?> 
 </div>
