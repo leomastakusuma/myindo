@@ -1,1 +1,29 @@
-<?php echo $this->layout()->content; ?>
+<html>
+    <head>
+        <title> Myindo Cyber Media</title>
+        <?php echo $this->headLink()->appendStylesheet($this->baseUrl('gaya.css')) ?>
+    </head>
+    <body>
+        <table border="1" cellspacing="0" cellpading="0" width="80%" align="center">
+            <tr>
+                <td>Header</td>
+            </tr>
+            <tr>
+                <td>
+            <?php echo $this->layout()->content; ?>
+                </td>
+        
+            </tr>
+            <tr>
+                <td>Footer</td>
+            </tr>
+            
+        </table>
+        
+    </body>
+    
+    
+</html>
+
+
+
