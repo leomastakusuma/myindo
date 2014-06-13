@@ -10,7 +10,8 @@ class Hcgs_HcgsController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        $this->view->hcgs ='Module Hcgs';
+        $this->view->hcgs =array('Nama'=>'Aldnoni','Umur'=>'21');
+        
     }
 
 

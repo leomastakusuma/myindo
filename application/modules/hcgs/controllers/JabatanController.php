@@ -12,9 +12,7 @@ class Hcgs_JabatanController extends Zend_Controller_Action
     {
         // action body
         $look = new Hcgs_Model_Jabatan();
-        echo'<pre>';
-        print_r($look);die;
-        $this->view->data=$look;
+        $this->view->nama=$look->fetchAll();
     }
 
 
