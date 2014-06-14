@@ -12,7 +12,8 @@ class Hcgs_JabatanController extends Zend_Controller_Action
     {
         // action body
         $look = new Hcgs_Model_DbTable_Jabatan();
-        $this->view->nama=$look->fetchAll();
+        $this->view->jabatan=$look->getall();
+
         
     
     }

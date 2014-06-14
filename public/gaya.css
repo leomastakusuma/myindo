@@ -9,10 +9,10 @@ and open the template in the editor.
 */
 
 .zend_form{  
-background:#fff;  
+background:yellow;  
 width:800px;  
-margin:5px auto;  
-padding:0;  
+margin:1px auto;  
+padding:1;  
 overflow:auto;  
 }  
   
@@ -49,3 +49,4 @@ float:right;
 .required:before{content:'* '}  
   
 .optional:before{content:'+ '}  
+
