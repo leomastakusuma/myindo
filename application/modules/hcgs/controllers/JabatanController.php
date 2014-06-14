@@ -43,6 +43,29 @@ class Hcgs_JabatanController extends Zend_Controller_Action
                  
         }
     }
-       
+
+    public function editAction()
+    {
+        // action body
     }
+
+    public function deleteAction()
+    {
+        // action body
+       $deletedata= new Hcgs_Model_DbTable_Jabatan();
+       
+       if ($this->getRequest()->isPost()){
+           
+           $id_jabatan= $this->getRequest ()->getParam ( 'id_jabatan' );
+           $deletedata->deletedata( $id_jabatan );
+       }
+       else { $this->view->delete= $deletedata;}
+
+           }
+                
+    }
+
+
     
+
+

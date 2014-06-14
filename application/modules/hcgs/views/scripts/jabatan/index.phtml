@@ -19,7 +19,10 @@
    	<tr>
    	<td><?php echo $no?></td>
    	<td><?php echo $row->jabatan?></td>
-    <td> Edit | Delete</td>
+        <td>
+             <a href="/hcgs/jabatan/edit?id=<?php echo $row->id_jabatan?>">Edit</a> ||  
+             Delete
+        </td>
     <?php endforeach;?>
     </tr>
 

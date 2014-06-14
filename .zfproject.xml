@@ -39,6 +39,8 @@
             <controllerFile controllerName="Jabatan">
               <actionMethod actionName="index"/>
               <actionMethod actionName="input"/>
+              <actionMethod actionName="edit"/>
+              <actionMethod actionName="delete"/>
             </controllerFile>
           </controllersDirectory>
           <formsDirectory enabled="false">
@@ -66,6 +68,12 @@
               </viewControllerScriptsDirectory>
               <viewControllerScriptsDirectory forControllerName="jabatan">
                 <viewScriptFile forActionName="input"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Jabatan">
+                <viewScriptFile forActionName="edit"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Jabatan">
+                <viewScriptFile forActionName="delete"/>
               </viewControllerScriptsDirectory>
             </viewScriptsDirectory>
             <viewHelpersDirectory/>
