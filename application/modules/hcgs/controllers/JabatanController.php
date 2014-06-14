@@ -22,12 +22,26 @@ class Hcgs_JabatanController extends Zend_Controller_Action
         // action body
         $form   = new Hcgs_Form_Jabatan();
         $this->view->form=$form;
-          
+        
+        if($this->getRequest()->isPost()){
+            
+           if ($form->isValid ( $this->_request->getPost () )) {
+                            $id         = $this->getRequest ()->getParam ( 'id_jabatan' );
+                            $nama       = $this->getRequest ()->getParam ( 'Jabatan' );
+                            
+                           
+                        
+                            $jabatan    = new Hcgs_Model_DbTable_Jabatan();
+                            $jabatan->input($id,$nama);
+                            $this->_helper->redirector ( 'index' );
+          }
+          else
+          {
+              $this->view->form=$form;
+          }
+                 
+        }
     }
-
-
-}
-
-
-
-
+       
+    }
+    

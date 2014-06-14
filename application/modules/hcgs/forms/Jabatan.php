@@ -8,11 +8,19 @@ class Hcgs_Form_Jabatan extends Zend_Form
         /* Form Elements & Other Definitions Here ... */
   		$this->setName('Form Update Jabatan');
 		$this->setMethod('post');
-
+                
+                
+                $id  = new Zend_Form_Element_Text('id_jabatan');
+                $id->setLabel('Id Jabatan');
+//                $id->setRequired(true);     
+                $id->setAttrib('disable','disabled');
+                $id->setAttrib('size', '5');
+                        
+                
 		$jab = new Zend_Form_Element_Text('Jabatan');
 		$jab->setLabel('Jabatan');
 		$jab->setRequired(TRUE);
-		$jab->setAttrib('size', '50');
+		$jab->setAttrib('size', '25');
 		$jab->addValidator('NotEmpty');
 		$jab->addErrorMessage('Pilih Jabatan');
 		
@@ -21,7 +29,7 @@ class Hcgs_Form_Jabatan extends Zend_Form
 		$submit = new Zend_Form_Element_Submit('Simpan');
 		$submit->setLabel('Simpan');
 		
-		$this->addElements(array($jab,$submit));
+		$this->addElements(array($id,$jab,$submit));
 	
     }
 
