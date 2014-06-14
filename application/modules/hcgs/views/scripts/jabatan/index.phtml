@@ -20,8 +20,8 @@
    	<td><?php echo $no?></td>
    	<td><?php echo $row->jabatan?></td>
         <td>
-             <a href="/hcgs/jabatan/edit?id=<?php echo $row->id_jabatan?>">Edit</a> ||  
-             Delete
+             <a href="/hcgs/jabatan/edit?id=<?php echo $row->id_jabatan?>">Edit</a> || 
+             <a href="/hcgs/jabatan/delete?id=<?php echo $row->id_jabatan?>">Delete</a>
         </td>
     <?php endforeach;?>
     </tr>
