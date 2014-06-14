@@ -14,5 +14,15 @@ class Hcgs_Model_DbTable_Jabatan extends Zend_Db_Table_Abstract
     $this->insert($data);
     }
 
+
+    public function getall($order='id_jabatan')
+    {
+    	$query = $this->select();
+    	$query ->from (($this->_name),array('*'));
+    	$query ->order($order, 'asc');
+    	$jabatan =$this->fetchall($query);
+    	return $jabatan;
+    }
+
 }
 
