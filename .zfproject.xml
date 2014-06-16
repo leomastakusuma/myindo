@@ -41,6 +41,11 @@
               <actionMethod actionName="input"/>
               <actionMethod actionName="edit"/>
               <actionMethod actionName="delete"/>
+              <actionMethod actionName="tambah"/>
+            </controllerFile>
+            <controllerFile controllerName="Departemen">
+              <actionMethod actionName="index"/>
+              <actionMethod actionName="insert"/>
             </controllerFile>
           </controllersDirectory>
           <formsDirectory enabled="false">
@@ -75,6 +80,12 @@
               <viewControllerScriptsDirectory forControllerName="Jabatan">
                 <viewScriptFile forActionName="delete"/>
               </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Departemen">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="departemen">
+                <viewScriptFile forActionName="insert"/>
+              </viewControllerScriptsDirectory>
             </viewScriptsDirectory>
             <viewHelpersDirectory/>
             <viewFiltersDirectory/>
@@ -97,6 +108,12 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Jabatan">
             <viewScriptFile forActionName="input"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Jabatan">
+            <viewScriptFile forActionName="tambah"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Departemen">
+            <viewScriptFile forActionName="insert"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>
