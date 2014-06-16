@@ -3,14 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/Myindo/public/gaya.css</file>
             <file>file:/var/www/Myindo/application/modules/hcgs/controllers/JabatanController.php</file>
-            <file>file:/var/www/Myindo/application/modules/hcgs/models/DbTable/Jabatan.php</file>
-            <file>file:/var/www/Myindo/application/modules/hcgs/views/scripts/jabatan/index.phtml</file>
-            <file>file:/var/www/Myindo/application/modules/hcgs/views/scripts/departemen/index.phtml</file>
-            <file>file:/var/www/Myindo/application/views/scripts/testing/index.phtml</file>
             <file>file:/var/www/Myindo/application/modules/hcgs/controllers/DepartemenController.php</file>
-            <file>file:/var/www/Myindo/application/modules/hcgs/models/DbTable/Departemen.php</file>
         </group>
     </open-files>
 </project-private>
