@@ -1,0 +1,30 @@
+<br /><br />
+<div id="view-content">
+   <table border="1" cellpadding="0" cellspacing="0" align="center" width="80%">
+   
+   <tr>
+        <td colspan="3" height="30" align="center"> Data Jabatan</td>
+   </tr>
+   
+   <tr>
+        <td align="center" width="10%">No</td>
+        <td align="left" width="70%">Departemen</td>
+        <td align="center" width="20%">Action</td>
+   </tr>
+   <?php $no=0?>
+   <?php foreach ($this->departemen as $row):$no++?>
+   <tr>  
+       <td align="center"><?php echo $no?></td>
+       <td align="left"><?php echo $row->departemen?></td>  
+       <td align="center"> Edit | Delete</td>
+   </tr>       
+        <?php endforeach;?>
+  <tr>
+      <td colspan="3" align="right">
+        <a href="<?php echo $this->url(array('controller'=>'departemen','action'=>'insertdepartemen'))?>"><input type="button" value="Add New"></a>
+      </td>
+  </tr>
+   </table>
+    <br> 
+	
+</div>
