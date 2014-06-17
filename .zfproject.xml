@@ -47,6 +47,18 @@
               <actionMethod actionName="index"/>
               <actionMethod actionName="insert"/>
             </controllerFile>
+            <controllerFile controllerName="Karyawan">
+              <actionMethod actionName="index"/>
+            </controllerFile>
+            <controllerFile controllerName="Gaji">
+              <actionMethod actionName="index"/>
+            </controllerFile>
+            <controllerFile controllerName="Potongan">
+              <actionMethod actionName="index"/>
+            </controllerFile>
+            <controllerFile controllerName="Golongan">
+              <actionMethod actionName="index"/>
+            </controllerFile>
           </controllersDirectory>
           <formsDirectory enabled="false">
             <formFile formName="Testing"/>
@@ -85,6 +97,18 @@
               </viewControllerScriptsDirectory>
               <viewControllerScriptsDirectory forControllerName="departemen">
                 <viewScriptFile forActionName="insert"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Karyawan">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Gaji">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Potongan">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Golongan">
+                <viewScriptFile forActionName="index"/>
               </viewControllerScriptsDirectory>
             </viewScriptsDirectory>
             <viewHelpersDirectory/>
