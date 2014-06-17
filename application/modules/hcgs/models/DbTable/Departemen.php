@@ -16,6 +16,17 @@ class Hcgs_Model_DbTable_Departemen extends Zend_Db_Table_Abstract
         return $getdepartemen;
     }
     
+    
+    public function addDepartemen($id,$nama)
+    {
+       $data  =   array('id_departemen'=>$id,
+                        'departemen'=>$nama,
+                      );
+                         
+       $this->insert($data);
+    }
+
+
     public function getCount()
     {
         $query = $this->select();
@@ -24,13 +35,13 @@ class Hcgs_Model_DbTable_Departemen extends Zend_Db_Table_Abstract
       
 
         return $count;
-        
-                
-                
-                
-                
-                
+                  
     }
-    
+    public function deldepatemen($id_departemen)
+    {
+        $where = $this->getAdapter()->quoteInto('id_departemen = ?', $id_departemen);
+        $this->delete($where);
+    }
+   
 }
 

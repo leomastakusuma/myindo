@@ -10,15 +10,9 @@ class Hcgs_Form_Departemen extends Zend_Form
 
 
         $no = new Zend_Form_Element_Text('no');
-//        $no ->setRequired('true');
         $no ->setLabel('No');
         $no ->setAttrib('disabled','disabled');
         $no ->setAttrib('size', '5');
-//        $no ->addValidator('NotEmpty');
-//        /$no ->addErrorMessage('No Tidak Boleh Kosong');
-        
-        $nohidden = new Zend_Form_Element_Hidden('nohiden');
-        
         
         $nama = new Zend_Form_Element_Text('Nama');
         $nama ->setLabel('Nama');
@@ -29,14 +23,8 @@ class Hcgs_Form_Departemen extends Zend_Form
         
         $submit = new Zend_Form_Element_Submit('Simpan');
         $submit->setLabel('Simpan');
-        
-
-
-
-
-
-
-        $this->addElements(array($no,$nohidden,$nama,$submit));
+   
+        $this->addElements(array($no,$nama,$submit));
     }
 
 

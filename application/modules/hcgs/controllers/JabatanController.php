@@ -19,8 +19,6 @@ class Hcgs_JabatanController extends Zend_Controller_Action
         $look = new Hcgs_Model_DbTable_Jabatan();
         $this->view->jabatan=$look->getall();
 
-        
-    
     }
 
     public function inputAction()
@@ -32,17 +30,13 @@ class Hcgs_JabatanController extends Zend_Controller_Action
         foreach ($data as $row):
             $no=$row['total']+1;
         endforeach;
-//        $form->populate ( $data );
-//        $form->getElement('id_jabatan')->setValue($no);
-//        print_r($no);
-       
+      
         if($this->getRequest()->isPost()){
             
            if ($form->isValid ( $this->_request->getPost () )) {
                             $id         = $this->getRequest ()->getParam ( 'id_jabatan' );
                             $nama       = $this->getRequest ()->getParam ( 'Jabatan' );
                             
-                           
                         
                             $jabatan    = new Hcgs_Model_DbTable_Jabatan();
                             $jabatan->input($id,$nama);
@@ -53,7 +47,6 @@ class Hcgs_JabatanController extends Zend_Controller_Action
         
         $form->populate ( $data );
         $form->getElement('id_jabatan')->setValue($no);
-//        $form->getElement('nohiden')->setValue($no);
         $this->view->form=$form;
         
         

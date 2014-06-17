@@ -46,6 +46,7 @@
             <controllerFile controllerName="Departemen">
               <actionMethod actionName="index"/>
               <actionMethod actionName="insert"/>
+              <actionMethod actionName="delete"/>
             </controllerFile>
             <controllerFile controllerName="Karyawan">
               <actionMethod actionName="index"/>
@@ -109,6 +110,9 @@
               </viewControllerScriptsDirectory>
               <viewControllerScriptsDirectory forControllerName="Golongan">
                 <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Departemen">
+                <viewScriptFile forActionName="delete"/>
               </viewControllerScriptsDirectory>
             </viewScriptsDirectory>
             <viewHelpersDirectory/>
