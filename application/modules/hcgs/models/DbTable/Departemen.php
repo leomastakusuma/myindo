@@ -16,7 +16,21 @@ class Hcgs_Model_DbTable_Departemen extends Zend_Db_Table_Abstract
         return $getdepartemen;
     }
     
-    
+    public function getCount()
+    {
+        $query = $this->select();
+        $query->from(($this->_name),('count(*) as total'));
+        $count = $this->fetchAll($query)->toArray();
+      
+
+        return $count;
+        
+                
+                
+                
+                
+                
+    }
     
 }
 

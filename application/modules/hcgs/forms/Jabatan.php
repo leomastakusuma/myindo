@@ -22,7 +22,7 @@ class Hcgs_Form_Jabatan extends Zend_Form
 		$jab->setRequired(TRUE);
 		$jab->setAttrib('size', '25');
 		$jab->addValidator('NotEmpty');
-		$jab->addErrorMessage('Pilih Jabatan');
+		$jab->addErrorMessage('jabatan Tidak Boleh Kosong');
 		
 		
 		

@@ -30,5 +30,18 @@ class Hcgs_Model_DbTable_Jabatan extends Zend_Db_Table_Abstract
         $where = $this->getAdapter()->quoteInto('id_jabatan = ?', $id_jabatan);
         $this->delete($where);
     }
+    
+    public function getCount()
+    {
+        $query = $this->select();
+        $query->from(($this->_name),('count(*) as total'));
+        $count = $this->fetchAll($query)->toArray();
+      
+
+        return $count;
+        
+    }         
+                
+                
 }
 

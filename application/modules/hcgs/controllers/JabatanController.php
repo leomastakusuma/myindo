@@ -5,7 +5,12 @@ class Hcgs_JabatanController extends Zend_Controller_Action
 
     public function init()
     {
-        /* Initialize action controller here */
+
+        // $layoutPath = APPLICATION_PATH . '/templates/admin';
+        // $options    = array('layout'=>'index',
+        //                     'layoutPath'=>$layoutPath);
+        // Zend_Layout::startMvc($options);
+
     }
 
     public function indexAction()
@@ -21,9 +26,16 @@ class Hcgs_JabatanController extends Zend_Controller_Action
     public function inputAction()
     {
         // action body
-        $form   = new Hcgs_Form_Jabatan();
-        $this->view->form=$form;
-        
+        $count  = new Hcgs_Model_DbTable_Jabatan();
+        $data   = $count->getCount();
+        $form   = new Hcgs_Form_Jabatan(null,$data);
+        foreach ($data as $row):
+            $no=$row['total']+1;
+        endforeach;
+//        $form->populate ( $data );
+//        $form->getElement('id_jabatan')->setValue($no);
+//        print_r($no);
+       
         if($this->getRequest()->isPost()){
             
            if ($form->isValid ( $this->_request->getPost () )) {
@@ -36,18 +48,21 @@ class Hcgs_JabatanController extends Zend_Controller_Action
                             $jabatan->input($id,$nama);
                             $this->_helper->redirector ( 'index' );
           }
-          else
-          {
-              $this->view->form=$form;
-          }
-        }       
+          
+        }      
+        
+        $form->populate ( $data );
+        $form->getElement('id_jabatan')->setValue($no);
+//        $form->getElement('nohiden')->setValue($no);
+        $this->view->form=$form;
+        
         
     }
 
-//    public function editAction()
-//    {
-//        // action body
-//    }
+   public function editAction()
+   {
+       // action body
+   }
 
     public function deleteAction()
     {
