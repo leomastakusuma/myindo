@@ -50,6 +50,8 @@
             </controllerFile>
             <controllerFile controllerName="Karyawan">
               <actionMethod actionName="index"/>
+              <actionMethod actionName="delete"/>
+              <actionMethod actionName="insert"/>
             </controllerFile>
             <controllerFile controllerName="Gaji">
               <actionMethod actionName="index"/>
@@ -60,6 +62,7 @@
             <controllerFile controllerName="Golongan">
               <actionMethod actionName="index"/>
               <actionMethod actionName="insert"/>
+              <actionMethod actionName="delete"/>
             </controllerFile>
           </controllersDirectory>
           <formsDirectory enabled="false">
@@ -67,6 +70,7 @@
             <formFile formName="Jabatan"/>
             <formFile formName="Departemen"/>
             <formFile formName="Golongan"/>
+            <formFile formName="Karyawan"/>
           </formsDirectory>
           <layoutsDirectory enabled="false">
             <layoutScriptsDirectory enabled="false"/>
@@ -76,6 +80,7 @@
               <dbTableFile dbTableName="Departemen"/>
               <dbTableFile dbTableName="Jabatan"/>
               <dbTableFile dbTableName="Golongan"/>
+              <dbTableFile dbTableName="Karyawan"/>
             </dbTableDirectory>
             <modelFile modelName="Jabatan"/>
           </modelsDirectory>
@@ -118,6 +123,15 @@
                 <viewScriptFile forActionName="delete"/>
               </viewControllerScriptsDirectory>
               <viewControllerScriptsDirectory forControllerName="Golongan">
+                <viewScriptFile forActionName="insert"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Golongan">
+                <viewScriptFile forActionName="delete"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Karyawan">
+                <viewScriptFile forActionName="delete"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Karyawan">
                 <viewScriptFile forActionName="insert"/>
               </viewControllerScriptsDirectory>
             </viewScriptsDirectory>

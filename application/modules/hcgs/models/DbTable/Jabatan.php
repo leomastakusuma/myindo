@@ -34,7 +34,7 @@ class Hcgs_Model_DbTable_Jabatan extends Zend_Db_Table_Abstract
     public function getCount()
     {
         $query = $this->select();
-        $query->from(($this->_name),('count(*) as total'));
+        $query->from(($this->_name),('max(id_jabatan) as total'));
         $count = $this->fetchAll($query)->toArray();
       
 

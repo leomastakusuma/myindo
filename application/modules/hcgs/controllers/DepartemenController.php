@@ -29,6 +29,7 @@ class Hcgs_DepartemenController extends Zend_Controller_Action
               $no    = $this->getRequest()->getParam('no');  
               $nama  = $this->getRequest ()->getParam ('Nama');
               
+              
               $departemen = new Hcgs_Model_DbTable_Departemen();
               $departemen->addDepartemen($no, $nama);
               $this->_helper->redirector('index');

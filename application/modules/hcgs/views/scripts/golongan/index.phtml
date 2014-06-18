@@ -1,9 +1,32 @@
 <br /><br />
 <div id="view-content">
-    <p>
-        <?php 
-            echo '<pre>';
-            print_r($this->golongan)
-        ?>
-    </p>
+  <table border="1" cellpadding="0" cellspacing="0" align="center" width="80%">
+   
+  <tr>
+        <td colspan="4" height="30" align="center"> Data Golongan</td>
+  </tr>
+   
+  <tr>
+        <td align="center" width="10%">No</td>
+        <td align="left" width="35%">Jabatan</td>
+        <td align="left" width="35%">Golongan</td>
+        <td align="center" width="20%">Action</td>
+  </tr>
+   <?php $no=0?>
+   <?php foreach ($this->golongan as $row):$no++?>
+  <tr>  
+       <td align="center"><?php echo $no?></td>
+       <td align="left"><?php echo $row->jabatan?></td>
+       <td align="left"><?php echo $row->golongan?></td>  
+       <td align="center"> <a href="/hcgs/Golongan/delete?id=<?php echo $row->id_golongan?>">Delete</a></td>
+  </tr>       
+        <?php endforeach;?>
+  <tr>
+      <td colspan="4" align="right">
+        <a href="<?php echo $this->url(array('controller'=>'Golongan','action'=>'insert'))?>"><input type="button" value="Add New"></a>
+      </td>
+  </tr>
+  </table>
+    <br> 
+
 </div>

@@ -14,23 +14,23 @@ class Hcgs_Form_Golongan extends Zend_Form
         $id_golongan->setAttrib('size', '5');
         $id_golongan->setAttrib('disable', 'disabled');
         
+        $id_jabatan = new Zend_Form_Element_Select('idjabatan');
+        $id_jabatan ->setLabel('Jabatan');
+        $id_jabatan ->setRequired(true);
+        $id_jabatan ->addErrorMessage('Jabatan Tidak Boleh Kosong');
         
-        
-        $id_jabatan = new Zend_Form_Element_Multiselect('idjabatan');
-        $id_jabatan ->setMultiOptions(array($options_value=>$options_label));
-               
-        
+          
         $golongan   = new Zend_Form_Element_Text('golongan');
         $golongan->setLabel('Golongan');
         $golongan->setRequired(true);
         $golongan->setAttrib('size', '30');
-        $golongan->addValidator('Not Empty');
+        $golongan->addValidator('NotEmpty');
         $golongan->addErrorMessage('Golongan Tidak Boleh Kosong');
         
         $submit     = new Zend_Form_Element_Submit('Simpan');
         $submit->setLabel('Simpan');
         
-        $this->addElements(array($id_golongan,$id_jabatan ,$golongan,$submit));
+        $this->addElements(array($id_golongan ,$id_jabatan,$golongan,$submit));
               
         
     }
