@@ -59,12 +59,14 @@
             </controllerFile>
             <controllerFile controllerName="Golongan">
               <actionMethod actionName="index"/>
+              <actionMethod actionName="insert"/>
             </controllerFile>
           </controllersDirectory>
           <formsDirectory enabled="false">
             <formFile formName="Testing"/>
             <formFile formName="Jabatan"/>
             <formFile formName="Departemen"/>
+            <formFile formName="Golongan"/>
           </formsDirectory>
           <layoutsDirectory enabled="false">
             <layoutScriptsDirectory enabled="false"/>
@@ -73,6 +75,7 @@
             <dbTableDirectory>
               <dbTableFile dbTableName="Departemen"/>
               <dbTableFile dbTableName="Jabatan"/>
+              <dbTableFile dbTableName="Golongan"/>
             </dbTableDirectory>
             <modelFile modelName="Jabatan"/>
           </modelsDirectory>
@@ -113,6 +116,9 @@
               </viewControllerScriptsDirectory>
               <viewControllerScriptsDirectory forControllerName="Departemen">
                 <viewScriptFile forActionName="delete"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Golongan">
+                <viewScriptFile forActionName="insert"/>
               </viewControllerScriptsDirectory>
             </viewScriptsDirectory>
             <viewHelpersDirectory/>

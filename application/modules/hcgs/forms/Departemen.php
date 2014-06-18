@@ -15,7 +15,7 @@ class Hcgs_Form_Departemen extends Zend_Form
         $no ->setAttrib('size', '5');
         
         $nama = new Zend_Form_Element_Text('Nama');
-        $nama ->setLabel('Nama');
+        $nama ->setLabel('Departemen');
         $nama ->setRequired('true');
         $nama ->setAttrib('size', '26');
         $nama ->addValidator('NotEmpty');

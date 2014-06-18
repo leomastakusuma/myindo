@@ -32,17 +32,13 @@ class Hcgs_DepartemenController extends Zend_Controller_Action
               $departemen = new Hcgs_Model_DbTable_Departemen();
               $departemen->addDepartemen($no, $nama);
               $this->_helper->redirector('index');
-              
-              
-            }
+             }
   
         }
         $form->populate ( $data );
         $form->getElement('no')->setValue($no);
         $this->view->form = $form;
-        
-        
-        
+     
     }
 
     public function deleteAction()

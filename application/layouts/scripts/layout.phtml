@@ -8,21 +8,23 @@
        
         <table border="1" cellspacing="0" cellpading="0" width="80%" align="center">
             <tr >
-                <td align="center" height="60" colspan="2">Header</td>
+                <td align="center" height="100" colspan="2">Header</td>
 
             </tr>
             <tr>
                 
               <td colspan="2">
-                  <div class="menuTemplate1">
+                  <div class="menuTemplate1 menuRight">
                   <?php include "menu.php"?>
                   </div>
               </td>
             </tr>
 
             <tr>
-                <td width="20%">
+                <td width="20%" valign="top">
+                    <br>
                    <?php include 'sidebar.php';?>
+                    
                 </td>
                 <td width="80%">
             <?php echo $this->layout()->content; ?>

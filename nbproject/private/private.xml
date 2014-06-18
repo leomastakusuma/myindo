@@ -3,7 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/var/www/Myindo/application/modules/hcgs/controllers/GolonganController.php</file>
             <file>file:/var/www/Myindo/application/modules/hcgs/controllers/JabatanController.php</file>
+            <file>file:/var/www/Myindo/application/modules/hcgs/forms/Departemen.php</file>
+            <file>file:/var/www/Myindo/application/modules/hcgs/models/DbTable/Golongan.php</file>
+            <file>file:/var/www/Myindo/application/modules/hcgs/forms/Golongan.php</file>
+            <file>file:/var/www/Myindo/public/menu.css</file>
+            <file>file:/var/www/Myindo/application/modules/hcgs/views/scripts/golongan/index.phtml</file>
+            <file>file:/var/www/Myindo/application/modules/hcgs/models/DbTable/Jabatan.php</file>
+            <file>file:/var/www/Myindo/application/modules/hcgs/views/scripts/golongan/insert.phtml</file>
+            <file>file:/var/www/Myindo/application/layouts/scripts/layout.phtml</file>
+            <file>file:/var/www/Myindo/application/modules/hcgs/forms/Jabatan.php</file>
             <file>file:/var/www/Myindo/application/modules/hcgs/controllers/DepartemenController.php</file>
         </group>
     </open-files>
