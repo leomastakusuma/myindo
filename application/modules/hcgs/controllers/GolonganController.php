@@ -2,7 +2,6 @@
 
 class Hcgs_GolonganController extends Zend_Controller_Action
 {
-
     public function init()
     {
         /* Initialize action controller here */
@@ -19,10 +18,10 @@ class Hcgs_GolonganController extends Zend_Controller_Action
     public function insertAction()
     {
         // action body
-        $form       = new Hcgs_Form_Golongan();
-        $jabatan    = new Hcgs_Model_DbTable_Jabatan();
-        $data_golongan   = new Hcgs_Model_DbTable_Golongan();
-        $data       =$data_golongan->getCount();
+        $form               = new Hcgs_Form_Golongan();
+        $jabatan            = new Hcgs_Model_DbTable_Jabatan();
+        $data_golongan      = new Hcgs_Model_DbTable_Golongan();
+        $data               =$data_golongan->getCount();
        
         foreach ($data as $rowgolongan){
             $id_golongan = $rowgolongan['total']+1;
@@ -31,8 +30,8 @@ class Hcgs_GolonganController extends Zend_Controller_Action
         $idjabatan = $jabatan->getall();
         $listJabatan = array();
         foreach ($idjabatan as $row){
-            $listJabatan[''] = 'Pilih Jabatan';
-            $listJabatan[$row->id_jabatan] = $row->jabatan;    
+            $listJabatan['']                = 'Pilih Jabatan';
+            $listJabatan[$row->id_jabatan]  = $row->jabatan;    
         }
         $form->getElement('idjabatan')->addMultiOptions($listJabatan);
         
@@ -40,8 +39,8 @@ class Hcgs_GolonganController extends Zend_Controller_Action
         {
             if($form->isValid($this->_request->getPost())){
                 $id_golongan    = $this->getRequest()->getParam('idgolongan');
-                $id_jabatan = $this->getRequest()->getParam('idjabatan');
-                $golongan   = $this->getRequest()->getParam('golongan');
+                $id_jabatan     = $this->getRequest()->getParam('idjabatan');
+                $golongan       = $this->getRequest()->getParam('golongan');
                 
                
                 $data_golongan->insertgolongan($id_golongan, $id_jabatan, $golongan);

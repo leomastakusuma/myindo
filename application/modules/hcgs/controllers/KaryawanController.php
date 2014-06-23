@@ -11,6 +11,8 @@ class Hcgs_KaryawanController extends Zend_Controller_Action
     public function indexAction()
     {
         // action body
+        $getkaryawan = new Hcgs_Model_DbTable_Karyawan();
+        $this->view->karyawan=$getkaryawan->getKaryawan();
     }
 
     public function deleteAction()
