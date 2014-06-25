@@ -10,14 +10,28 @@
 
 <script type="text/javascript">
        $(document).ready(function() {
+           if ($("#idjabatan").val() !== '') {
+               var idselect = $('#idjabatan').val();
+               var listGolongan = <?php echo json_encode($this->listGolongan)?>;
+                $('#idgolongan').html('');
+                $('#idgolongan').append('<option >Pilih Golongan</option>');
+                $.each(listGolongan, function(a, b) {
+                   if (b.id_jabatan === idselect) {
+                       $('#idgolongan').append('<option value='+b.id_golongan+'>'+b.golongan+'</option>');
+                   }    
+                })
+                var post = <?php echo json_encode($_POST)?>;
+                $("#idgolongan").val(post.idgolongan);
+            } 
+//           alert($("#idjabatan").val());
            $("#idjabatan").change(function() {
                var idselect = $('#idjabatan').val();
                var listGolongan = <?php echo json_encode($this->listGolongan)?>;
                 $('#idgolongan').html('');
-                $('#idgolongan').append('<option>Pilih Golongan</option>');
+                $('#idgolongan').append('<option >Pilih Golongan</option>');
                $.each(listGolongan, function(a, b) {
                    if (b.id_jabatan === idselect) {
-                       $('#idgolongan').append('<option>'+b.golongan+'</option>');
+                       $('#idgolongan').append('<option value='+b.id_golongan+'>'+b.golongan+'</option>');
                    }    
                })
                

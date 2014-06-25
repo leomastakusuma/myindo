@@ -50,8 +50,10 @@ class Hcgs_Form_Karyawan extends Zend_Form
         
         $id_golongan    = new Zend_Form_Element_Select('idgolongan');
         $id_golongan    ->setLabel('Golongan');
-        $id_golongan    ->setRequired(true);
-        $id_golongan    ->addErrorMessage('Golongan Tidak Boleh Kosong');
+        
+        $id_golongan->setRegisterInArrayValidator(false);
+//        $id_golongan    ->setRequired(true);
+//        $id_golongan    ->addErrorMessage('Golongan Tidak Boleh Kosong');
         
         
         

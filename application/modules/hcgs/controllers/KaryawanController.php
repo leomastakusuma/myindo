@@ -57,7 +57,7 @@ class Hcgs_KaryawanController extends Zend_Controller_Action
             
         foreach ($idgolongan as $row)
             {
-            $listgolongan['']                     = 'Pilih Golongan';
+                $listgolongan['']                     = 'Pilih Golongan';
             }
             $listGolongan = array();
             foreach ($idgolongan as $idx=>$row) {
@@ -67,6 +67,8 @@ class Hcgs_KaryawanController extends Zend_Controller_Action
                 
             }
         $this->view->listGolongan = $listGolongan;  // data untuk 
+        
+        
         $form->getElement('idjabatan')->addMultiOptions($listJabatan);
         $form->getElement('idgolongan')->addMultiOptions($listgolongan);
         $form->getElement('iddepartemen')->addMultiOptions($listdepartemen);
@@ -75,6 +77,12 @@ class Hcgs_KaryawanController extends Zend_Controller_Action
             
         if($this->getRequest()->isPost())
         {
+            
+//            print_r($this->getParam('idgolongan'));die;
+//            $form->getElement('idgolongan')->setValue($this->getParam('idgolongan'));
+//            echo '<pre>';
+//            echo $form->getElement('idgolongan')->getValue();
+//            print_r($form);die;
             if($form->isValid($this->_request->getPost()))
             {
                 $id           = $this->getRequest()->getParam('idkaryawan');
