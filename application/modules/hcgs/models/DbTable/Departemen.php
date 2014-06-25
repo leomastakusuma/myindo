@@ -43,5 +43,13 @@ class Hcgs_Model_DbTable_Departemen extends Zend_Db_Table_Abstract
         $this->delete($where);
     }
    
+    public function getall($order= 'id_departemen')
+    {
+        $query = $this->select();
+    	$query ->from (($this->_name),array('*'));
+    	$query ->order($order, 'asc');
+    	$departemen =$this->fetchall($query);
+    	return $departemen;
+    }
 }
 

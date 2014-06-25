@@ -66,11 +66,6 @@ class Hcgs_JabatanController extends Zend_Controller_Action
                 
     }
 
-    public function tambahAction()
-    {
-        // action body
-    }
-
 
 }
 
