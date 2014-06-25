@@ -23,7 +23,9 @@ class Hcgs_Model_DbTable_Karyawan extends Zend_Db_Table_Abstract
         $query->from(($this->_name),array('*'));
         $query->order($order,'asc');
         $getkaryawan = $this->fetchAll($query);
-        
+            
+//        print_r($query->query()->fetchAll());die;
+            
         return $getkaryawan;
         }
     

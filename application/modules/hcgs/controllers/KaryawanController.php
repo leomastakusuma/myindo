@@ -49,18 +49,24 @@ class Hcgs_KaryawanController extends Zend_Controller_Action
             $listdepartemen[$row->id_departemen]  = $row->departemen;    
             }
             
-        foreach ($idjabatan as $row)
+        foreach ($idgolongan as $rowgolongan)
             {
-            $listJabatan['']                      = 'Pilih Jabatan';
-            $listJabatan[$row->id_jabatan]        = $row->jabatan;    
+            $listJabatan['']                              = 'Pilih Jabatan';
+            $listJabatan[$rowgolongan->id_jabatan]        = $rowgolongan->jabatan;    
             }
             
         foreach ($idgolongan as $row)
             {
             $listgolongan['']                     = 'Pilih Golongan';
-            $listgolongan[$row->id_golongan]      = $row->golongan;    
             }
-            
+            $listGolongan = array();
+            foreach ($idgolongan as $idx=>$row) {
+                $listGolongan[$idx]['id_golongan']  = $row->id_golongan;
+                $listGolongan[$idx]['id_jabatan']   = $row->id_jabatan;
+                $listGolongan[$idx]['golongan']     = $row->golongan;
+                
+            }
+        $this->view->listGolongan = $listGolongan;  // data untuk 
         $form->getElement('idjabatan')->addMultiOptions($listJabatan);
         $form->getElement('idgolongan')->addMultiOptions($listgolongan);
         $form->getElement('iddepartemen')->addMultiOptions($listdepartemen);

@@ -1,6 +1,26 @@
+
+
 <br /><br />
 <div id="view-content">
     <p>
+        
         <?php echo $this->form?>
     </p>
 </div>
+
+<script type="text/javascript">
+       $(document).ready(function() {
+           $("#idjabatan").change(function() {
+               var idselect = $('#idjabatan').val();
+               var listGolongan = <?php echo json_encode($this->listGolongan)?>;
+                $('#idgolongan').html('');
+                $('#idgolongan').append('<option>Pilih Golongan</option>');
+               $.each(listGolongan, function(a, b) {
+                   if (b.id_jabatan === idselect) {
+                       $('#idgolongan').append('<option>'+b.golongan+'</option>');
+                   }    
+               })
+               
+           });
+       });
+</script>
