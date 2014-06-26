@@ -1,16 +1,16 @@
 <br /><br />
 <div id="view-content">
 
-<table border="1" cellpadding="0" cellspacing="0" align="center" width="100%">
+    <table border="1" cellpadding="0" cellspacing="0" align="center" width="100%" class="bgisi">
    
    <tr>
         <td colspan="9" height="30" align="center"> Data Karyawan</td>
    </tr>
    <tr>
         <td align="center" width="5%">No</td>
-        <td align="left" width="23%">Nama</td>
+        <td align="left" width="23%"> Nama</td>
         <td align="center" width="9%">Jenis Kelamin</td>
-        <td align="left" width="30%">TTL</td>
+        <td align="left" width="30%"> TTL</td>
         <td align="center" width="8%">Umur</td>
         <td align="center" width="10%">Departemen</td> 
         <td align="center" width="10%">Jabatan</td>
@@ -26,7 +26,7 @@
    <tr>
        <td align="center"><?php echo $no?></td>
        <td><?php echo $row['nama_karyawan']?></td>
-       <td><?php echo $row['jenis_kelamin']?></td>
+       <td align="center"><?php echo $row['jenis_kelamin']?></td>
        <td><?php echo $row['ttl']?></td>
        <td><?php echo $row['umur'].' Thn'?></td>
        <td><?php echo $row['departemen']?></td>
@@ -48,8 +48,10 @@
 
 
 </table>
-
- 
-  
+<script type="text/javascript">
+$(document).ready(function() {
+   $("#test").tablesorter();
+});
+</script>
 <br>
 </div>

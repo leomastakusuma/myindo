@@ -9,5 +9,16 @@
 		<td>:</td>
 		<td><input type="text" name="password" maxlength="10" size="10"></td>
 	</tr>
+        
+        <?php $url=$this->Url();?>
+           <?php  if($url=='/hcgs/Karyawan'):?>
+           <?php echo 'acs';?>
+           <?php endif;?>
+          
+              
+        
+        
+        
+        
 </table>
 
