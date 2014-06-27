@@ -4,16 +4,22 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <file>file:/var/www/Myindo/application/modules/hcgs/controllers/KaryawanController.php</file>
             <file>file:/var/www/Myindo/application/modules/hcgs/views/scripts/karyawan/delete.phtml</file>
             <file>file:/var/www/Myindo/application/modules/hcgs/forms/Karyawan.php</file>
             <file>file:/var/www/Myindo/application/modules/hcgs/views/scripts/departemen/index.phtml</file>
             <file>file:/var/www/Myindo/application/modules/hcgs/models/DbTable/Karyawan.php</file>
 =======
+=======
+>>>>>>> f275a08b4ad240fb41cdd5502e0e1220cfec02dc
             <file>file:/var/www/Myindo/public/gaya.css</file>
             <file>file:/var/www/Myindo/public/sidebar.php</file>
             <file>file:/var/www/Myindo/application/layouts/scripts/layout.phtml</file>
             <file>file:/var/www/Myindo/library/Zend/Json/Expr.php</file>
+<<<<<<< HEAD
+>>>>>>> f275a08b4ad240fb41cdd5502e0e1220cfec02dc
+=======
 >>>>>>> f275a08b4ad240fb41cdd5502e0e1220cfec02dc
             <file>file:/var/www/Myindo/application/modules/hcgs/views/scripts/karyawan/index.phtml</file>
         </group>
