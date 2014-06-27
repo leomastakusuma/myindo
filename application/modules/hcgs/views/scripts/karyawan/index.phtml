@@ -1,20 +1,40 @@
 <br /><br />
 <div id="view-content">
-
-<table border="1" cellpadding="0" cellspacing="0" align="center" width="100%">
+    <script type="text/css">
+                ukurn{
+                
+                }
+        </script>
+<table bgcolor="" border="1" cellpadding="2" cellspacing="0" align="center" width="100%">
    
+
    <tr>
-        <td colspan="9" height="30" align="center"> Data Karyawan</td>
+        <td colspan="20" height="18" align="left"> 
+        <font color=”#b4bcbc” face=”Arial” size=”10”>
+        <b>Data Karyawan</b> 
+</td>
+        
+
    </tr>
    <tr>
         <td align="center" width="5%">No</td>
         <td align="left" width="23%">Nama</td>
-        <td align="center" width="9%">Jenis Kelamin</td>
         <td align="left" width="30%">TTL</td>
+        <td align="center" width="9%">Jenis Kelamin</td>
         <td align="center" width="8%">Umur</td>
-        <td align="center" width="10%">Departemen</td> 
+        <td align="center" width="10%">Alamat</td>
+        <td align="center" width="10%">Agama</td>
+        <td align="center" width="10%">Golongan Darah</td>
+        <td align="center" width="10%">Status Kawin</td>
+        <td align="center" width="10%">Kewarganegaraan</td>
+        <td align="center" width="10%">Telepon</td>
+        <td align="center" width="10%">No.KTP</td>
+        <td align="center" width="10%">NPWP</td>
         <td align="center" width="10%">Jabatan</td>
-        <td align="left" width="">Golongan</td>
+        <td align="center" width="10%">Departemen</td> 
+        <td align="left" width="10%">Golongan</td>
+        <td align="center" width="10%">Status Pegawai</td>
+        <td align="center" width="10%">Tanggal Masuk</td>
         <td align="center" width="10%">Action</td>
    </tr>
 
@@ -24,22 +44,32 @@
     <?php $karyawan = $this->karyawan;?>
     <?php foreach ($karyawan as $row):$no++?>
    <tr>
-       <td align="center"><?php echo $no?></td>
+       <td align="left"><?php echo $no?></td>
        <td><?php echo $row['nama_karyawan']?></td>
-       <td><?php echo $row['jenis_kelamin']?></td>
        <td><?php echo $row['ttl']?></td>
+       <td><?php echo $row['jenis_kelamin']?></td>
        <td><?php echo $row['umur'].' Thn'?></td>
+       <td><?php echo $row['alamat']?></td>
+       <td><?php echo $row['agama']?></td>
+       <td><?php echo $row['gol_darah']?></td>
+       <td><?php echo $row['stat_kawin']?></td>
+       <td><?php echo $row['kwn']?></td>
+       <td><?php echo $row['no_telp']?></td>
+       <td><?php echo $row['no_ktp']?></td>
+       <td><?php echo $row['npwp']?></td>
        <td><?php echo $row['departemen']?></td>
        <td><?php echo $row['jabatan']?></td>
        <td><?php echo $row['golongan']?></td>
+       <td><?php echo $row['stat_pegawai']?></td>
+       <td><?php echo $row['tgl_masuk']?></td>
        
-       <td align="center">
+       <td align="left">
            <a href="/hcgs/jabatan/delete?id=<?php echo $row->id_jabatan?>">Delete</a>
        </td>
    <?php endforeach;?>
    </tr>
    <tr>
-       <td colspan="9" align="right">
+       <td font color= 'colspan="9" align="right">
            <a href="<?php echo $this->url(array('controller'=>'Karyawan','action'=>'insert'))?>"><input type="button" value="Add New"></a>
        </td>
    </tr>

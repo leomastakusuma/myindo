@@ -5,18 +5,32 @@ class Hcgs_Model_DbTable_Karyawan extends Zend_Db_Table_Abstract
 
     protected $_name = 'T_Karyawan';
     
-    public  function inputKaryawan ($id, $nama, $jns_klmn, $ttl, $umur,$idjabatan,$iddepartemen,$idgolongan)
+    public  function inputKaryawan ($id,$nama,$ttl,$jns_klmn,$umur,$alamat,$agama,
+                                     $gol_darah,$stat_kawin,$kwn,$no_telp,$no_ktp,
+                                     $npwp,$idjabatan,$iddepartemen,$idgolongan,
+                                     $stat_pegawai,$tgl_masuk)
     {   
-            $data = array( 'id_Karyawan'=>$id,
-                           'nama_karyawan'=>$nama,
-                           'jenis_kelamin'=>$jns_klmn,
-                           'ttl'=>$ttl,
-                           'umur'=>$umur,
-                           'id_jabatan'=>$idjabatan,
-                           'id_departemen'=>$iddepartemen,
-                           'id_golongan'=>$idgolongan
+            $data = array( 'id_Karyawan'    =>$id,
+                           'nama_karyawan'  =>$nama,
+                           'ttl'            =>$ttl,
+                           'jenis_kelamin'  =>$jns_klmn,
+                           'umur'           =>$umur,
+                           'alamat'         =>$alamat,
+                           'agama'          =>$agama,
+                           'gol_darah'      =>$gol_darah,
+                           'stat_kawin'     =>$stat_kawin,
+                           'kwn'            =>$kwn,
+                           'no_telp'        =>$no_telp,
+                           'no_ktp'         =>$no_ktp,
+                           'npwp'           =>$npwp,
+                           'id_jabatan'     =>$idjabatan,
+                           'id_departemen'  =>$iddepartemen,
+                           'id_golongan'    =>$idgolongan,
+                           'stat_pegawai'   =>$stat_pegawai,
+                           'tgl_masuk'      =>$tgl_masuk
                          );
-//                         print_r($data);die;
+                         //echo '<pre>';
+                         //print_r($data);die;
             $this->insert($data);
     }      
 
