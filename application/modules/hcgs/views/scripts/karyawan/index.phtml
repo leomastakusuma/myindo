@@ -1,11 +1,16 @@
 <br /><br />
 <div id="view-content">
+
     <script type="text/css">
                 ukurn{
                 
                 }
         </script>
 <table bgcolor="" border="1" cellpadding="2" cellspacing="0" align="center" width="100%">
+
+
+   
+
    
 
    <tr>
@@ -18,6 +23,7 @@
    </tr>
    <tr>
         <td align="center" width="5%">No</td>
+
         <td align="left" width="23%">Nama</td>
         <td align="left" width="30%">TTL</td>
         <td align="center" width="9%">Jenis Kelamin</td>
@@ -46,6 +52,8 @@
    <tr>
        <td align="left"><?php echo $no?></td>
        <td><?php echo $row['nama_karyawan']?></td>
+       <td align="center"><?php echo $row['jenis_kelamin']?></td>
+
        <td><?php echo $row['ttl']?></td>
        <td><?php echo $row['jenis_kelamin']?></td>
        <td><?php echo $row['umur'].' Thn'?></td>
@@ -74,12 +82,11 @@
        </td>
    </tr>
 
-
-
-
 </table>
-
- 
-  
+<script type="text/javascript">
+$(document).ready(function() {
+   $("#test").tablesorter();
+});
+</script>
 <br>
 </div>

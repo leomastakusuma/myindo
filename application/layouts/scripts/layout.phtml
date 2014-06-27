@@ -3,23 +3,48 @@
         <title> Myindo Cyber Media</title>
         <?php echo $this->headLink()->appendStylesheet($this->baseUrl('gaya.css')) ?>
          <?php echo $this->headLink()->appendStylesheet($this->baseUrl('menu.css')) ?>
+        <!--CSS JQuery-->
+        <?php echo $this->headLink()->appendStylesheet($this->baseUrl('css-jquery/jquery-ui-custom.css'))?>
+        <?php echo $this->headLink()->appendStylesheet($this->baseUrl('css-jquery/ui.jqgrid.css'))?>
+        <?php echo $this->headLink()->appendStylesheet($this->baseUrl('css-jquery/ui.multiselect.css'))?>
+        <!--End CSS JQuery-->
+        
+        <!--Add JQuery-->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+        <script type="text/javascript" src="<?php echo $this->baseUrl('js/jquery.js')?>"></script>
+        <script type="text/javascript" src="<?php echo $this->baseUrl('js/jquery-ui-custom.min.js')?>"></script>
+        <script type="text/javascript" src="<?php echo $this->baseUrl('js/jquery.layout.js')?>"></script>
+        <script type="text/javascript" src="<?php echo $this->baseUrl('js/i18n/grid.locale-en.js')?>"></script>
+        
+        <script type="text/javascript">
+	$.jgrid.no_legacy_api = true;
+	$.jgrid.useJSON = true;
+        </script>
+
+        <script type="text/javascript" src="<?php echo $this->baseUrl('js/ui.multiselect.js')?>"></script>
+        <script type="text/javascript" src="<?php echo $this->baseUrl('js/jquery.jqGrid.js')?>"></script>
+        <script type="text/javascript" src="<?php echo $this->baseUrl('js/jquery.tablednd.js')?>"></script>
+        <script type="text/javascript" src="<?php echo $this->baseUrl('js/jquery.contextmenu.js')?>"></script>
+
+
+
+    
+        <!--EOF JQuery-->
+        
     
     </head>
     <body>
        
         <table border="1" cellspacing="0" cellpading="0" width="80%" align="center">
-            <tr >
-                <td align="center" height="100" colspan="2">Header</td>
-
+            <tr>
+             <td align="center" height="100" colspan="2">Header</td>
             </tr>
             <tr>
-                
-              <td colspan="2">
-                  <div class="menuTemplate1 menuRight">
-                  <?php include "menu.php"?>
-                  </div>
-              </td>
+             <td colspan="2">
+                 <div class="menuTemplate1 menuRight">
+                 <?php include "menu.php"?>
+                 </div>
+             </td>
             </tr>
 
             <tr>
