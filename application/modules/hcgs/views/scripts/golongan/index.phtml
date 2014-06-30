@@ -1,32 +1,30 @@
-<br /><br />
-<div id="view-content">
-  <table border="1" cellpadding="0" cellspacing="0" align="center" width="80%">
-   
-  <tr>
-        <td colspan="4" height="30" align="center"> Data Golongan</td>
-  </tr>
-   
-  <tr>
-        <td align="center" width="10%">No</td>
-        <td align="left" width="35%">Jabatan</td>
-        <td align="left" width="35%">Golongan</td>
-        <td align="center" width="20%">Action</td>
-  </tr>
-   <?php $no=0?>
-   <?php foreach ($this->golongan as $row):$no++?>
-  <tr>  
-       <td align="center"><?php echo $no?></td>
-       <td align="left"><?php echo $row->jabatan?></td>
-       <td align="left"><?php echo $row->golongan?></td>  
-       <td align="center"> <a href="/hcgs/Golongan/delete?id=<?php echo $row->id_golongan?>">Delete</a></td>
-  </tr>       
-        <?php endforeach;?>
-  <tr>
-      <td colspan="4" align="right">
-        <a href="<?php echo $this->url(array('controller'=>'Golongan','action'=>'insert'))?>"><input type="button" value="Add New"></a>
-      </td>
-  </tr>
-  </table>
-    <br> 
 
-</div>
+<table id="list4" align="center"></table>
+<script type="text/javascript">
+jQuery("#list4").jqGrid({
+	datatype: "json-encode",
+	height: 100,
+   	colNames:['No','Jabatan', 'Golongan', 'Action'],
+   	colModel:[
+   		{name:'No',index:'No', width:30, sorttype:"int"},
+   		{name:'Jabatan',index:'Jabatan', width:200, sorttype:"char"},
+   		{name:'Golongan',index:'Golongan', width:200},
+   		{name:'Action',index:'Action', width:100, align:"right",sorttype:"float"},
+   			
+   	],
+   	multiselect: true,
+   	caption: "Manipulating Array Data"
+});     <?php $idx=0;?>
+var mydata = [  
+                <?php foreach($this->golongan as $row){$idx++?>
+                {    
+                     No:"<?php echo $idx?>",
+                     Jabatan:"<?php echo $row->jabatan?>",
+                     Golongan:"<?php echo $row->golongan?>",
+                     Action:"<a href='<?php echo $this->redirect(array('action'=>'delete','id'=>$row->id_jabatan))?>'>Delete</a>"
+                },
+		<?php }?>
+            ];
+for(var i=0;i<=mydata.length;i++)
+	jQuery("#list4").jqGrid('addRowData',i+1,mydata[i]);
+    </script>
