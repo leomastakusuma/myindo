@@ -85,8 +85,9 @@ class Hcgs_Form_Karyawan extends Zend_Form
         $id_departemen  ->setLabel('Departemen');
         $id_departemen  ->setRequired(true);
         $id_departemen  ->addErrorMessage('Departemen Tidak Boleh Kosong');
-        
-        $id_jabatan     = new Zend_Form_Element_Select('jabatan');
+
+        $id_jabatan     = new Zend_Form_Element_Select('idjabatan');
+
         $id_jabatan     ->setLabel('Jabatan');
         $id_jabatan     ->setRequired(true);
         $id_jabatan     ->addErrorMessage('Jabatan Tidak Boleh Kosong');
