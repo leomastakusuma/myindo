@@ -19,7 +19,7 @@
                    if (b.id_jabatan === idselect) {
                        $('#idgolongan').append('<option value='+b.id_golongan+'>'+b.golongan+'</option>');
                    }    
-                })
+                });
                 var post = <?php echo json_encode($_POST)?>;
                 $("#idgolongan").val(post.idgolongan);
             } 
@@ -33,7 +33,7 @@
                    if (b.id_jabatan === idselect) {
                        $('#idgolongan').append('<option value='+b.id_golongan+'>'+b.golongan+'</option>');
                    }    
-               })
+               });
                
            });
        });

@@ -18,6 +18,10 @@ class Hcgs_KaryawanController extends Zend_Controller_Action
     public function deleteAction()
     {
         // action body
+        $deletekaryawan     = new Hcgs_Model_DbTable_Karyawan();
+        $id_Karyawan        = $this->getRequest()->getParam('id');
+        $deletekaryawan     ->delKaryawan($id_Karyawan);
+        $this->_helper      ->redirector ( 'index' );
     }
 
     public function insertAction()
@@ -43,41 +47,42 @@ class Hcgs_KaryawanController extends Zend_Controller_Action
             $listgolongan   = array();
             $listdepartemen = array();
             
+            
         foreach ($iddepartemen as $row)
             {
-            $listdepartemen['']                   = 'Pilih Departemen';
-            $listdepartemen[$row->id_departemen]  = $row->departemen;    
+            $listdepartemen['']                    = 'Pilih Departemen';
+            $listdepartemen[$row->id_departemen]   = $row->departemen;    
             }
             
         foreach ($idgolongan as $rowgolongan)
             {
-            $listJabatan['']                              = 'Pilih Jabatan';
-            $listJabatan[$rowgolongan->id_jabatan]        = $rowgolongan->jabatan;    
+            $listJabatan   ['']                    = 'Pilih Jabatan';
+            $listJabatan[$rowgolongan->id_jabatan] = $rowgolongan->jabatan;    
             }
             
         foreach ($idgolongan as $row)
             {
-                $listgolongan['']                     = 'Pilih Golongan';
+            $listgolongan['']                      = 'Pilih Golongan';
             }
-            $listGolongan = array();
-            foreach ($idgolongan as $idx=>$row) {
-                $listGolongan[$idx]['id_golongan']  = $row->id_golongan;
-                $listGolongan[$idx]['id_jabatan']   = $row->id_jabatan;
-                $listGolongan[$idx]['golongan']     = $row->golongan;
-                
+            
+        
+        $listGolongan = array();
+       
+        foreach ($idgolongan as $idx=>$row)
+            {
+            $listGolongan[$idx]['id_golongan'] = $row->id_golongan;
+            $listGolongan[$idx]['id_jabatan']  = $row->id_jabatan;
+            $listGolongan[$idx]['golongan']    = $row->golongan;
             }
-        $this->view->listGolongan = $listGolongan;  // data untuk 
+            $this->view->listGolongan = $listGolongan; 
         
         
-        $form->getElement('idjabatan')->addMultiOptions($listJabatan);
-        $form->getElement('idgolongan')->addMultiOptions($listgolongan);
-        $form->getElement('iddepartemen')->addMultiOptions($listdepartemen);
-            
-            
+        $form->getElement('idjabatan')   ->addMultiOptions($listJabatan);
+        $form->getElement('idgolongan')  ->addMultiOptions($listgolongan);
+        $form->getElement('iddepartemen')->addMultiOptions($listdepartemen);      
             
         if($this->getRequest()->isPost())
         {
-            
 //            print_r($this->getParam('idgolongan'));die;
 //            $form->getElement('idgolongan')->setValue($this->getParam('idgolongan'));
 //            echo '<pre>';
@@ -87,21 +92,59 @@ class Hcgs_KaryawanController extends Zend_Controller_Action
             {
                 $id           = $this->getRequest()->getParam('idkaryawan');
                 $nama         = $this->getRequest()->getParam('namakaryawan');
-                $klmn         = $this->getRequest()->getParam('jeniskelamin');
                 $ttl          = $this->getRequest()->getParam('ttl');
+                $klmn         = $this->getRequest()->getParam('jeniskelamin');
                 $umur         = $this->getRequest()->getParam('umur');
+                $alamat       = $this->getRequest()->getParam('alamat');
+                $agama        = $this->getRequest()->getParam('agama');
+                $gol_darah    = $this->getRequest()->getParam('gol_darah');
+                $stat_kawin   = $this->getRequest()->getParam('status_perkawinan');
+                $kwn          = $this->getRequest()->getParam('kewarganegaraan');
+                $no_telp      = $this->getRequest()->getParam('no_telp');
+                $no_ktp       = $this->getRequest()->getParam('no_ktp');
+                $npwp         = $this->getRequest()->getParam('npwp');
                 $idjabatan    = $this->getRequest()->getParam('idjabatan');
                 $iddepartemen = $this->getRequest()->getParam('iddepartemen');
                 $idgolongan   = $this->getRequest()->getParam('idgolongan');
-                       
+                $stat_pegawai = $this->getRequest()->getParam('status_pegawai');
+                $tgl_masuk    = $this->getRequest()->getParam('tgl_masuk');
+                
                 
                 $karyawan= new Hcgs_Model_DbTable_Karyawan();
-                $karyawan->inputKaryawan($id,$nama,$klmn,$ttl,$umur,$idjabatan,$iddepartemen,$idgolongan);
+                $karyawan->inputKaryawan($id, $nama, $ttl, $klmn, $umur, $alamat,
+                                         $agama, $gol_darah, $stat_kawin, $kwn, $no_telp,
+                                         $no_ktp, $npwp, $idjabatan, $iddepartemen,
+                                         $idgolongan, $stat_pegawai, $tgl_masuk);
                 $this->_helper->redirector ( 'index' );   
             }
         }
           
         $form->getElement('idkaryawan')->setValue($id);
         $this->view->form= $form;
+    }
+
+    public function editAction()
+    {
+
+         
+    }
+
+    public function detailAction()
+    {
+        // action body
+        $idkaryawan = $this->getRequest()->getParam('id');
+        if(!empty($idkaryawan))
+        {
+            $getkaryawan = new Hcgs_Model_DbTable_Karyawan();
+            $data        = $getkaryawan->getDetailKaryawan($idkaryawan);
+            $form        = new Hcgs_Form_DetailKaryawan(null, $data);
+            $form->populate($data);
+            $this->view->form=$form;
+            
         }
+      
+    }
+
+
 }
+

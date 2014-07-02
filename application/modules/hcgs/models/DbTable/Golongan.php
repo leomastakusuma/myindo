@@ -33,7 +33,8 @@ class Hcgs_Model_DbTable_Golongan extends Zend_Db_Table_Abstract
         return $count;
      }    
      
-     public function delgolongan ($id_golongan = 'id_golongan'){
+     public function delgolongan ($id_golongan = 'id_golongan')
+     {
          $where = $this->getAdapter()->quoteInto('id_golongan = ?', $id_golongan);
          $this->delete($where);
      }
