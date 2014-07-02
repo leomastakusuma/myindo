@@ -18,6 +18,10 @@ class Hcgs_KaryawanController extends Zend_Controller_Action
     public function deleteAction()
     {
         // action body
+        $deletekaryawan     = new Hcgs_Model_DbTable_Karyawan();
+        $id_Karyawan        = $this->getRequest()->getParam('id');
+        $deletekaryawan     ->delKaryawan($id_Karyawan);
+        $this->_helper      ->redirector ( 'index' );
     }
 
     public function insertAction()
@@ -117,5 +121,30 @@ class Hcgs_KaryawanController extends Zend_Controller_Action
           
         $form->getElement('idkaryawan')->setValue($id);
         $this->view->form= $form;
+    }
+
+    public function editAction()
+    {
+
+         
+    }
+
+    public function detailAction()
+    {
+        // action body
+        $idkaryawan = $this->getRequest()->getParam('id');
+        if(!empty($idkaryawan))
+        {
+            $getkaryawan = new Hcgs_Model_DbTable_Karyawan();
+            $data        = $getkaryawan->getDetailKaryawan($idkaryawan);
+            $form        = new Hcgs_Form_DetailKaryawan(null, $data);
+            $form->populate($data);
+            $this->view->form=$form;
+            
         }
+      
+    }
+
+
 }
+

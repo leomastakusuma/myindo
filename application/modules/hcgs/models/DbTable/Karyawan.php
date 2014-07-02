@@ -45,8 +45,8 @@ class Hcgs_Model_DbTable_Karyawan extends Zend_Db_Table_Abstract
         $query->join('T_Departemen', 'T_Departemen.id_departemen = T_Karyawan.id_departemen');
         $query->join('T_Golongan','T_Golongan.id_golongan = T_Karyawan.id_golongan');
     
-        
-        return $query->query()->fetchAll();
+        $getkaryawan = $this->fetchAll($query);
+        return $getkaryawan;
         }
     
     public function getCount()
@@ -57,6 +57,26 @@ class Hcgs_Model_DbTable_Karyawan extends Zend_Db_Table_Abstract
    
         return $count;
     }
+    
+    public function delKaryawan($id_Karyawan = 'id_Karyawan')
+     {
+         $where = $this->getAdapter()->quoteInto('id_Karyawan = ?', $id_Karyawan);
+         $this->delete($where);
+     }
+     
+     public function getDetailKaryawan($idkaryawan){
+         $query = $this->select();
+         $query->from(($this->_name),array('*'));
+         $query->setIntegrityCheck(false);
+         $query->join('T_Jabatan', 'T_Jabatan.id_jabatan = T_Karyawan.id_jabatan');
+         $query->join('T_Departemen', 'T_Departemen.id_departemen = T_Karyawan.id_departemen');
+         $query->join('T_Golongan','T_Golongan.id_golongan = T_Karyawan.id_golongan');
+         $query->where('id_Karyawan = ?',$idkaryawan);
+         
+         $getdetail = $this->fetchRow($query)->toArray();
+         return $getdetail;
+         
+     }
 
 }
 
