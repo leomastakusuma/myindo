@@ -36,7 +36,7 @@ class Hcgs_Form_Karyawan extends Zend_Form
         $umur           ->setRequired(true);
         $umur           ->addValidator('alnum');
         $umur           ->setRequired(TRUE);
-        $umur           ->addErrorMessage('Umur Tidak Boleh Kosong');
+        $umur           ->addErrorMessage('Format Umur Salah');
         
         $alamat         = new Zend_Form_Element_Textarea('alamat');
         $alamat         ->setLabel('Alamat');
