@@ -34,7 +34,8 @@ class Hcgs_Form_Karyawan extends Zend_Form
         $umur           ->setLabel('Umur');
         $umur           ->setAttribs(array('size'=>'5'));
         $umur           ->setRequired(true);
-        $umur           ->addValidator('NotEmpty');
+        $umur           ->addValidator('alnum');
+        $umur           ->setRequired(TRUE);
         $umur           ->addErrorMessage('Umur Tidak Boleh Kosong');
         
         $alamat         = new Zend_Form_Element_Textarea('alamat');
@@ -81,7 +82,7 @@ class Hcgs_Form_Karyawan extends Zend_Form
         //$npwp           ->addValidator('NotEmpty');
         //$npwp           ->addErrorMessage('NPWP Tidak Boleh Kosong');
         
-        $id_departemen  = new Zend_Form_Element_Select('departemen');
+        $id_departemen  = new Zend_Form_Element_Select('iddepartemen');
         $id_departemen  ->setLabel('Departemen');
         $id_departemen  ->setRequired(true);
         $id_departemen  ->addErrorMessage('Departemen Tidak Boleh Kosong');
@@ -92,7 +93,7 @@ class Hcgs_Form_Karyawan extends Zend_Form
         $id_jabatan     ->setRequired(true);
         $id_jabatan     ->addErrorMessage('Jabatan Tidak Boleh Kosong');
         
-        $id_golongan    = new Zend_Form_Element_Select('golongan');
+        $id_golongan    = new Zend_Form_Element_Select('idgolongan');
         $id_golongan    ->setLabel('Golongan');
         $id_golongan    ->setRegisterInArrayValidator(false);
         
